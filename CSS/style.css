@@ -1,0 +1,65 @@
+html,
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Roboto Mono", monospace;
+}
+
+.container {
+    margin: 10vh 30vw;
+    height: 20vh;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 50px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: auto;
+  }
+  
+  .container::after {
+    content: "";
+    background-color: #cdf4f0;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 15px;
+    left: 15px;
+    transition: 0.3s;
+  }
+  
+  .container:hover::after {
+    top: 0px;
+    left: 0px;
+  }
+
+  .photo{
+      align-items: flex-end;
+  }
+
+  table{
+    border-collapse: collapse;
+    border-spacing: 0px;
+    height: 70%;
+    justify-content: left;
+    white-space: nowrap;
+    border: none;
+  }
+
+  .titre_ligne{
+      font-weight: 600;
+  }
+
+  .photo{
+      background-color: white;
+      border-radius: 20px;
+      text-align: center;
+  }
