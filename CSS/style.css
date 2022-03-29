@@ -17,7 +17,7 @@ body {
 
 .container {
     margin: 10vh 30vw;
-    height: 20vh;
+    min-height: 20vh;
     font-size: 20px;
     font-weight: 200;
     letter-spacing: 1px;
