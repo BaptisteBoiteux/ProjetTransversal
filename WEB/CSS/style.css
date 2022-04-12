@@ -1,6 +1,7 @@
 :root {
     --color_1: #cdf4f0;
     --color_2: #38d1c3;
+    --color_danger : #EE6F57;
   }
 
 html,
@@ -16,7 +17,7 @@ body {
 
 .container {
     margin: 10vh 30vw;
-    height: 20vh;
+    min-height: 20vh;
     font-size: 20px;
     font-weight: 200;
     letter-spacing: 1px;
