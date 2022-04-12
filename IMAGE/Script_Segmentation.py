@@ -6,28 +6,28 @@ import numpy as np
 ##-----------------Initialisation de la base de référence---------------------##
 ##----------------------------------------------------------------------------##
 
-ImRef=[]
-ImRef.append(cv2.imread("img_test_2_1T_ref.png"))
-ImRef.append(cv2.imread("TEST_REF.png"))
-ImRef.append(cv2.imread("TEST11_REF.jpg"))
-ImRef.append(cv2.imread("IMAGE_TEST_CAMERA_REF.jpg"))
+ImRef = []
+#ImRef.append(cv2.imread("img_test_2_1T_ref.png"))
+#ImRef.append(cv2.imread("TEST_REF.png"))
+ImRef.append(cv2.imread('TEST11_REF.jpg'))
+#ImRef.append(cv2.imread("IMAGE_TEST_CAMERA_REF.jpg"))
 
-gray_ImRef=[]
+gray_ImRef = []
 for i in range (0, len(ImRef)):  # transformation en niveau de gris
     gray_ImRef.append(cv2.cvtColor(ImRef[i], cv2.COLOR_BGR2GRAY))
     
-th_ImRef=[]
+th_ImRef = []
 for i in range (0, len(ImRef)):  # seuillage
     th = cv2.threshold(gray_ImRef[i],5,255,cv2.THRESH_BINARY)[1]
     th_ImRef.append(th)
     
-contours_ImRef=[]  
+contours_ImRef = []  
 for i in range (0, len(ImRef)):  # extraction des contours
     contours = cv2.findContours(th_ImRef[i],cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)[0]
     contours_ImRef.append(contours)
     
-airs_ImRef=[]
-#airs2_ImRef=[]
+airs_ImRef = []
+#airs2_ImRef = []
 for i in range (0, len(ImRef)):  # extraction des caractéristiques
     airs_ImRef.append(cv2.contourArea(contours_ImRef[i][0]))
     #x,y,w,h = cv2.boundingRect(contours_ImRef[i][0])
@@ -164,3 +164,5 @@ def Detection(ref,image):
     print(verif,imref_nb)
     print(air_max)
     print(airs_ImRef[imref_nb])
+
+Detection(0,'TEST11.jpg')
