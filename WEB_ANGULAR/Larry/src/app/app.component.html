@@ -1,8 +1,8 @@
+<app-connexion></app-connexion>
+
+<button (click)="switchconnected()">switch connected or not</button>
 <div class="content" role="main">
-
-  <h1>BONSOIR JE SUIS LE ROBOT LARRY</h1>
-  <h2>COMME LE GARS DANS LA NUIT AU MUSEE</h2>
-
+  <h1>BONSOIR JE SUIS LE SITE DU ROBOT LARRY</h1>
 </div>
 
-<router-outlet></router-outlet>
+<app-historique *ngIf="connected == true"></app-historique>
