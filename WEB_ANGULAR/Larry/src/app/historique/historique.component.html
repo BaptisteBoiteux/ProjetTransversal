@@ -1,0 +1,23 @@
+<div class="container" 
+    *ngFor="let ronde of data,">
+    <div class="info">
+        <table>
+            <tr>
+                <td class="titre_ligne">Numéro de la ronde </td>
+                <td class="contenu" class="temps">{{ronde.id}}</td>
+            </tr>
+            <tr>
+                <td class="titre_ligne">Horodateur : </td>
+                <td class="contenu" class="horodateur">{{ronde.heure}}</td>
+            </tr>
+            <tr>
+                <td class="titre_ligne">Temps de la ronde : </td>
+                <td class="contenu" class="temps">{{ronde.temps}}</td>
+            </tr>
+            <tr>
+                <td class="titre_ligne"> Nombre tableaux détecté :</td>
+                <td class="contenu" class="nb_tab">{{ronde.nb_tab}}</td>
+            </tr>
+        </table>               
+    </div>
+</div>
