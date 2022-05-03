@@ -24,9 +24,40 @@ def add_pht_bdd(data):
     disconnect_2_bdd(connection)
     #print(connection)
 
+'''
 """
 PHASE DE TEST
 """
 data = "(0,0,1),(1,1,1),(2,0,1),(3,1,1),(4,1,1),(5,0,1);"    
 add_pht_bdd(data)
+'''
 
+
+
+def add_ronde_bdd(data):
+    '''
+    TO-DO :
+        
+    
+    @input : 
+        
+    
+    @output : 
+        
+    '''    
+    (cursor, connection) = connect_2_bdd()
+    requete = "INSERT INTO RONDE (TPS_RDE,DATE_RDE) VALUES " + data
+    print(requete)
+    
+    cursor.execute(requete)
+
+    connection.commit()
+    
+    #print(connection)
+    disconnect_2_bdd(connection)
+    #print(connection)
+
+'''
+data = "(000, '2022-05-03 16:29:32.555116');"
+add_ronde_bdd(data)
+'''

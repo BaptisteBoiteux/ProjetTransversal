@@ -1,3 +1,16 @@
+from datetime import datetime
+
+
+def formatage_1():
+    output = ""
+    DATE_RDE = datetime.now()
+    #print (DATE_RDE)
+    TPS_RDE = str('000')
+    output = '(' +  TPS_RDE + ", " + "'" + str(DATE_RDE) + "'" + ')' + ';'
+    return output
+#print (formatage_1())
+
+
 def formatage_2(lst_tab, id_rde):
     '''
     @input : 
@@ -18,5 +31,3 @@ def formatage_2(lst_tab, id_rde):
             output += ";"
 
     return (output)
-
-print(formatage_2([0 , 1 , 0 , 1 , 1 , 0], 1))
