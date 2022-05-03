@@ -30,3 +30,22 @@ def connect_2_bdd():
 
 def disconnect_2_bdd(connection):
     connection.close()
+    
+
+def get_id_ronde():
+    '''
+    @output 
+        int : numéro de la dernière ronde ajouté
+    '''
+    (cursor, connection) = connect_2_bdd()
+    
+    cursor.execute("SELECT MAX(ID_RDE) FROM RONDE;",)
+    
+    for value in cursor:
+        id_rde = value
+    
+    disconnect_2_bdd(connection)
+    
+    return(id_rde[0])
+
+
