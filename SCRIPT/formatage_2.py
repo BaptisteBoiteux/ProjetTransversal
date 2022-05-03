@@ -17,4 +17,6 @@ def formatage_2(lst_tab, id_rde):
         else: 
             output += ";"
 
-    #print(output)
+    return (output)
+
+print(formatage_2([0 , 1 , 0 , 1 , 1 , 0], 1))
