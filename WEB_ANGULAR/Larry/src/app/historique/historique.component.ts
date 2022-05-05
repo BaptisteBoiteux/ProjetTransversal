@@ -6,23 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./historique.component.scss']
 })
 export class HistoriqueComponent implements OnInit {
+  display_more = -1 ;
+
   data = [{
     id: 1,
     heure: "23/05 - 8h45",
     temps: 12.4,
-    nb_tab: 12
+    nb_tab: 12,
+    tab_presence: [1,0,0,1]
   },
   {
     id: 2,
     heure: "23/05 - 23h45",
     temps: 15.5,
-    nb_tab: 12
+    nb_tab: 12,
+    tab_presence: [0,0,0,0]
   },
   {
     id: 3,
     heure: "23/05 - 18h54",
     temps: 19.3,
-    nb_tab: 13
+    nb_tab: 13,
+    tab_presence: [1,0,1,1]
   }
 ]
   constructor() { }

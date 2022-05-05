@@ -1,5 +1,8 @@
 <div class="container" 
-    *ngFor="let ronde of data,">
+    *ngFor="let ronde of data; let i = index"
+    (mouseover)="display_more = i"
+    (mouseout)="display_more = -1"
+    >
     <div class="info">
         <table>
             <tr>
@@ -18,6 +21,13 @@
                 <td class="titre_ligne"> Nombre tableaux détecté :</td>
                 <td class="contenu" class="nb_tab">{{ronde.nb_tab}}</td>
             </tr>
+            <div [hidden]="!(display_more === i)">
+                <tr *ngFor="let tab of ronde.tab_presence; let i = index">
+                    <td class="num_tab">Tableau n°{{i}}</td>
+                    <td class="presence" class="non_present" *ngIf="tab==1">Non-présent</td>
+                    <td class="presence" class="present" *ngIf="tab==0">Présent</td>
+                </tr>
+            </div>
         </table>               
     </div>
 </div>

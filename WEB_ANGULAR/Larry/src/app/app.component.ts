@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HistRdeComponent } from './hist-rde/hist-rde.component';
 import { HistoriqueComponent } from './historique/historique.component';
 
 @Component({
