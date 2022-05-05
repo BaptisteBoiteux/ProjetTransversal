@@ -28,8 +28,8 @@
                 <div [hidden]="!(display_more === i)">
                     <tr *ngFor="let tab of ronde.tab_presence; let i = index">
                         <td class="num_tab">Tableau n°{{i}}</td>
-                        <td class="presence" *ngIf="tab==1">Non-présent</td>
-                        <td class="presence" *ngIf="tab==0">Présent</td>
+                        <td class="presence" *ngIf="tab==1" class="text-danger"><i class="bi bi-exclamation"></i>Non-présent</td>
+                        <td class="presence" *ngIf="tab==0" class="text-success"><i class="bi bi-check" ></i>Présent</td>
                     </tr>
                 </div>
             </table>  
