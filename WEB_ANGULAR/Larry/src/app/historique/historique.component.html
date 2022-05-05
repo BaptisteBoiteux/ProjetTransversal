@@ -3,6 +3,7 @@
     (mouseover)="display_more = i"
     (mouseout)="display_more = -1"
     >
+
     <div class="card">
         <div class="card-body">
             <table>
@@ -27,8 +28,8 @@
                 <div [hidden]="!(display_more === i)">
                     <tr *ngFor="let tab of ronde.tab_presence; let i = index">
                         <td class="num_tab">Tableau n°{{i}}</td>
-                        <td class="presence" class="non_present" *ngIf="tab==1">Non-présent</td>
-                        <td class="presence" class="present" *ngIf="tab==0">Présent</td>
+                        <td class="presence" *ngIf="tab==1">Non-présent</td>
+                        <td class="presence" *ngIf="tab==0">Présent</td>
                     </tr>
                 </div>
             </table>  
