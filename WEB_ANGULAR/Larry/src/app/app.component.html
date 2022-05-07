@@ -1,10 +1,14 @@
-<app-connexion></app-connexion>
+<app-connexion *ngIf="connected == false"></app-connexion>
 
 <button
   class="btn btn-primary"
-  (click)="switchconnected()">switch connected or not</button>
-<div class="content" role="main">
-  <h1>Bonjour {{name}}</h1>
-</div>
+  (click)="switchconnected()">switch connected or not
+</button>
 
-<app-historique *ngIf="connected == true"></app-historique>
+<div class="all_info" *ngIf="connected == true">
+  <div class="content" role="main">
+    <h1>Bonjour {{name}}</h1>
+  </div>
+
+  <app-historique></app-historique>
+</div>
