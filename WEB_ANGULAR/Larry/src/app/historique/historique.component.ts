@@ -56,6 +56,7 @@ export class HistoriqueComponent implements OnInit {
 
   ngOnInit(){
     //this.data = this.getData();
+    
   }
 
   test(): void {
