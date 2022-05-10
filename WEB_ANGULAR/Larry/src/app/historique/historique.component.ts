@@ -29,6 +29,27 @@ export class HistoriqueComponent implements OnInit {
     temps: 19.3,
     nb_tab: 13,
     tab_presence: [1,0,1,1]
+  },
+  {
+    id: 4,
+    heure: "23/05 - 18h54",
+    temps: 19.3,
+    nb_tab: 13,
+    tab_presence: [1,0,1,1]
+  },
+  {
+    id: 5,
+    heure: "23/05 - 18h54",
+    temps: 19.3,
+    nb_tab: 13,
+    tab_presence: [1,0,1,1]
+  },
+  {
+    id: 6,
+    heure: "23/05 - 18h54",
+    temps: 19.3,
+    nb_tab: 13,
+    tab_presence: [1,0,1,1]
   }
 ]
   constructor() { }
