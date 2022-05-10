@@ -4,9 +4,11 @@
     (mouseout)="display_more = -1"
     >
 
+    
+      
     <div class="card" class="p-3 mb-2 bg-light">
         <div class="card-body">
-            <table>
+            <table width="75%">
                 <h4 class="card-title">
                     <tr>
                         <td class="titre_ligne">ID Ronde</td>
@@ -24,6 +26,11 @@
                 <tr>
                     <td class="titre_ligne"> Nombre tableaux détecté :</td>
                     <td class="contenu" class="nb_tab">{{ronde.nb_tab}}</td>
+                </tr>
+                <tr *ngIf="ronde.tab_presence.includes(1)">
+                    <td colspan="2" class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Nom d'une pipe !</strong> Au moins 1 tableau n'est pas présent !
+                    </td>    
                 </tr>
                 <div [hidden]="!(display_more === i)">
                     <tr *ngFor="let tab of ronde.tab_presence; let i = index">
