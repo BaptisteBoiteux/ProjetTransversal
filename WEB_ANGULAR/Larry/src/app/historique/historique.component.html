@@ -1,33 +1,45 @@
-<div class="container" 
+<div class="ronde_container" 
     *ngFor="let ronde of data; let i = index"
     (mouseover)="display_more = i"
     (mouseout)="display_more = -1"
+    data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example"
     >
-    <div class="info">
-        <table>
-            <tr>
-                <td class="titre_ligne">Numéro de la ronde </td>
-                <td class="contenu" class="temps">{{ronde.id}}</td>
-            </tr>
-            <tr>
-                <td class="titre_ligne">Horodateur : </td>
-                <td class="contenu" class="horodateur">{{ronde.heure}}</td>
-            </tr>
-            <tr>
-                <td class="titre_ligne">Temps de la ronde : </td>
-                <td class="contenu" class="temps">{{ronde.temps}}</td>
-            </tr>
-            <tr>
-                <td class="titre_ligne"> Nombre tableaux détecté :</td>
-                <td class="contenu" class="nb_tab">{{ronde.nb_tab}}</td>
-            </tr>
-            <div [hidden]="!(display_more === i)">
-                <tr *ngFor="let tab of ronde.tab_presence; let i = index">
-                    <td class="num_tab">Tableau n°{{i}}</td>
-                    <td class="presence" class="non_present" *ngIf="tab==1">Non-présent</td>
-                    <td class="presence" class="present" *ngIf="tab==0">Présent</td>
+    
+    <div class="card" class="p-3 mb-2 bg-light" id="hist_{{ronde.id}}">
+        <div class="card-body">
+            <table width="75%">
+                <h4 class="card-title">
+                    <tr>
+                        <td class="titre_ligne">ID Ronde</td>
+                        <td class="contenu" class="temps">{{ronde.id}}</td>
+                    </tr>
+                </h4>
+                <tr>
+                    <td class="titre_ligne">Horodateur : </td>
+                    <td class="contenu" class="horodateur">{{ronde.heure}}</td>
                 </tr>
-            </div>
-        </table>               
+                <tr>
+                    <td class="titre_ligne">Temps de la ronde : </td>
+                    <td class="contenu" class="temps">{{ronde.temps}}</td>
+                </tr>
+                <tr>
+                    <td class="titre_ligne"> Nombre tableaux détecté :</td>
+                    <td class="contenu" class="nb_tab">{{ronde.nb_tab}}</td>
+                </tr>
+                <tr *ngIf="ronde.tab_presence.includes(1)">
+                    <td colspan="2" class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Nom d'une pipe !</strong> Au moins 1 tableau n'est pas présent !
+                    </td>    
+                </tr>
+                <div [hidden]="!(display_more === i)">
+                    <tr *ngFor="let tab of ronde.tab_presence; let i = index">
+                        <td class="num_tab">Tableau n°{{i}}</td>
+                        <td class="presence" *ngIf="tab==1" class="text-danger"><i class="bi bi-exclamation"></i>Non-présent</td>
+                        <td class="presence" *ngIf="tab==0" class="text-success"><i class="bi bi-check" ></i>Présent</td>
+                    </tr>
+                </div>
+            </table>  
+        </div>             
     </div>
 </div>
+

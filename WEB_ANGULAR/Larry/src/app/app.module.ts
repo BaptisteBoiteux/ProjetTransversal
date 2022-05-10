@@ -7,17 +7,23 @@ import { HistoriqueComponent } from './historique/historique.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeconnexionComponent } from './deconnexion/deconnexion.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HistoriqueComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    DeconnexionComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

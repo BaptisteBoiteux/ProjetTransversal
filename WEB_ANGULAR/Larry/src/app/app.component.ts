@@ -9,6 +9,7 @@ import { HistoriqueComponent } from './historique/historique.component';
 
 export class AppComponent {
   title = 'Larry';
+  name= 'Léo'
   connected = new Boolean(true);
   
   ngOnInit(): void{
