@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Data } from '@angular/router';
-import * as internal from 'stream';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +7,7 @@ export class Bdd2WebService {
 
   constructor() { }
 
-  data = [{
+  private data = [{
     id: 1,
     heure: "23/05 - 8h45",
     temps: 12.4,
@@ -52,8 +50,11 @@ export class Bdd2WebService {
     tab_presence: [1,0,1,1]
   }
 ]
+  public supdateData() {
+    //TO DO BAPTISTE
+  }
 
-  getData(): {id:number, heure:string, temps:number, nb_tab:number, tab_presence:any}[] {
+  public getData(): {id:number, heure:string, temps:number, nb_tab:number, tab_presence:any}[] {
     return this.data;
   }
 }
