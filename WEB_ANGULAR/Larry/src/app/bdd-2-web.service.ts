@@ -11,7 +11,7 @@ export class Bdd2WebService {
     id: 1,
     heure: "23/05 - 8h45",
     temps: 12.4,
-    nb_tab: 12,
+    nb_tab: 17,
     tab_presence: [1,0,0,1]
   },
   {
