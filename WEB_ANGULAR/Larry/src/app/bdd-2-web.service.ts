@@ -6,6 +6,17 @@ import { Injectable } from '@angular/core';
 export class Bdd2WebService {
 
   constructor() { }
+  private user = [{
+    id: 1,
+    login: "user",
+    passwd: "user"
+  },
+  {
+    id: 2,
+    login: "root",
+    passwd: "root"
+  }
+  ]
 
   private data = [{
     id: 1,
@@ -50,11 +61,19 @@ export class Bdd2WebService {
     tab_presence: [1,0,1,1]
   }
 ]
-  public supdateData() {
+  public updateTabData() {
+    //TO DO BAPTISTE
+  }
+  
+  public updateUsrData() {
     //TO DO BAPTISTE
   }
 
-  public getData(): {id:number, heure:string, temps:number, nb_tab:number, tab_presence:any}[] {
+  public getTabData(): {id:number, heure:string, temps:number, nb_tab:number, tab_presence:any}[] {
     return this.data;
+  }
+
+  public getUsrData(): {id:number, login:string, passwd:string}[] {
+    return this.user;
   }
 }

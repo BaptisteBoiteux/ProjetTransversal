@@ -14,6 +14,6 @@ export class HistoriqueComponent implements OnInit {
   constructor(private bddService: Bdd2WebService) { }
 
   ngOnInit(){
-    this.data = this.bddService.getData();
+    this.data = this.bddService.getTabData();
   }
 }

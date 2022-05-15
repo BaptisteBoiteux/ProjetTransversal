@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Bdd2WebService } from '../bdd-2-web.service';
 
 @Component({
   selector: 'app-connexion',
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./connexion.component.scss']
 })
 export class ConnexionComponent implements OnInit {
+  private userData: {id:number, login:string, passwd:string}[] = [];
 
-  constructor() { }
+  constructor(private bddService: Bdd2WebService) { }
 
   ngOnInit(): void {
+    this.userData = this.bddService.getUsrData();
+    //console.log(this.userData)
   }
 }
