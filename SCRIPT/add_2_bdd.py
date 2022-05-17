@@ -13,6 +13,7 @@ def add_pht_bdd(data):
         str :  contient le "VALUES" pour l'envoie de donné à la base de donnée
     '''    
     (cursor, connection) = connect_2_bdd()
+    print("data = ", data)
     requete = "INSERT INTO PHOTO (ID_TAB_PHT, REF_PHT, ID_RDE_PHT) VALUES " + data
     print(requete)
     
