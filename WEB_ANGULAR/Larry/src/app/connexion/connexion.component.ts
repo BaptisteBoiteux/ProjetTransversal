@@ -7,12 +7,15 @@ import { Bdd2WebService } from '../services/bdd-2-web.service';
   styleUrls: ['./connexion.component.scss']
 })
 export class ConnexionComponent implements OnInit {
-  private userData: {id:number, login:string, passwd:string}[] = [];
-
   constructor(private bddService: Bdd2WebService) { }
 
   ngOnInit(): void {
-    this.userData = this.bddService.getUsrData();
+    this.bddService.getAllUsr();
     //console.log(this.userData)
+  }
+
+  onSubmit(login:string, password:string) {
+    //console.log(login, password)
+    this.bddService.postUsr({login,password});
   }
 }

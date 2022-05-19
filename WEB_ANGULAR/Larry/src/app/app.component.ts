@@ -8,14 +8,30 @@ import { HistoriqueComponent } from './historique/historique.component';
 })
 
 export class AppComponent {
-  title = 'Larry';
-  name= 'Léo'
-  connected = new Boolean(true);
+  private title = 'Larry';
+  private name= 'Léo';
+  private connected = new Boolean(false);
   
   ngOnInit(): void{
   }
 
   switchconnected(){
     this.connected = !this.connected;
+  }
+
+  setName(name:string) {
+    this.name = name;
+  }
+
+  getName(){
+    return this.name;
+  }
+
+  getConnected(){
+    return this.connected;
+  }
+
+  setConnected(){
+    this.connected = !this.connected
   }
 }
