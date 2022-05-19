@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HistoriqueComponent } from './historique/historique.component';
+import { ConnexionComponent } from './connexion/connexion.component'
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent {
   private title = 'Larry';
   private name= 'Léo';
   private connected = new Boolean(false);
-  
+
   ngOnInit(): void{
   }
 
