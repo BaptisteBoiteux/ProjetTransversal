@@ -1,10 +1,12 @@
 <app-connexion *ngIf="getConnected() == false"></app-connexion>
 <app-deconnexion *ngIf="getConnected() == true"></app-deconnexion>
 
+<!-- 
 <button
   class="btn btn-primary"
   (click)="setConnected()">connection :  {{!getConnected()}}
 </button>
+-->
 
 <div class="all_info" *ngIf="getConnected() == true">
   <div class="content" role="main">

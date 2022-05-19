@@ -19,7 +19,9 @@ export class ConnexionComponent implements OnInit {
 
   onSubmit(login:string, password:string) {
     this.bddService.postUsr({"login":login,"password":password}).subscribe(val => {
-      if(val){this._parent.setConnected()}
+      if(val){
+        this._parent.setConnected()
+        this._parent.setName(login.split(".")[0])}
     }
       );
   }
