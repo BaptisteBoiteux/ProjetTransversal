@@ -1,14 +1,16 @@
-<app-connexion *ngIf="connected == false"></app-connexion>
-<app-deconnexion *ngIf="connected == true"></app-deconnexion>
+<app-connexion *ngIf="getConnected() == false"></app-connexion>
+<app-deconnexion *ngIf="getConnected() == true"></app-deconnexion>
 
+<!-- 
 <button
   class="btn btn-primary"
-  (click)="switchconnected()">connection :  {{!connected}}
+  (click)="setConnected()">connection :  {{!getConnected()}}
 </button>
+-->
 
-<div class="all_info" *ngIf="connected == true">
+<div class="all_info" *ngIf="getConnected() == true">
   <div class="content" role="main">
-    <h1>Bonjour {{name}}</h1>
+    <h1>Bonjour {{getName()}}</h1>
   </div>
 
   <app-historique></app-historique>
