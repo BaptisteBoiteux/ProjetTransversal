@@ -5,15 +5,15 @@ import time
 
 
 GPIO.setmode(GPIO.BOARD)
-channel = 21
+channel = 3
 GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         
 while True:
-    time.sleep(2)
-    #print("Cou")
-    if GPIO.input(channel):
-        print("Coucou")
+    print("Cou")
+    if GPIO.input(channel) == 1:
+        print("Je suis là")
         lancement_traitement()
+        print("Je suis toujours là")
         
         flag = False
         with open("Larry_Ronde_Info.txt", "r") as file :

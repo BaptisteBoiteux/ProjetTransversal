@@ -187,12 +187,13 @@ import RPi.GPIO as GPIO
 def lancement_traitement():
     while True:
         GPIO.setmode(GPIO.BOARD)
-        channel = 21
+        channel = 3
         GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-        if GPIO.input(channel):
-            print('Input was HIGH')
+        print("On attend le front")
+        if GPIO.input(channel) == 0:
+            print('Input was LOW')
             break
         else:
-            print('Input was LOW')
+            print('Input was HIGH')
     traitement = Detection('Larry_Ronde_Info.txt')
 
