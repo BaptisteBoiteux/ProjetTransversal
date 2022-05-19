@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Bdd2WebService } from '../bdd-2-web.service';
+import { Bdd2WebService } from '../services/bdd-2-web.service';
 
 @Component({
   selector: 'app-connexion',

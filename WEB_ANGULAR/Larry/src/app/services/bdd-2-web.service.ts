@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Observable, Timestamp } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+const baseUrl = "http://localhost:8080/api/rondes"
 
 @Injectable({
   providedIn: 'root'
 })
 export class Bdd2WebService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
   private user = [{
     id: 1,
     login: "user",
@@ -67,6 +71,10 @@ export class Bdd2WebService {
   
   public updateUsrData() {
     //TO DO BAPTISTE
+  }
+
+  getAll(): Observable<any> {
+    return this.http.get(baseUrl);
   }
 
   public getTabData(): {id:number, heure:string, temps:number, nb_tab:number, tab_presence:any}[] {
