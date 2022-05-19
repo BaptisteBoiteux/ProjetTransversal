@@ -11,18 +11,6 @@ export class Bdd2WebService {
 
   constructor(private http: HttpClient) { }
 
-  private user = [{
-    id: 1,
-    login: "user",
-    passwd: "user"
-  },
-  {
-    id: 2,
-    login: "root",
-    passwd: "root"
-  }
-  ]
-
   getAllRde() : Observable<any> {
     return this.http.get(baseUrl+"/rondes")
   }
